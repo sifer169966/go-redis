@@ -12,3 +12,8 @@ type Auth struct {
 type Middleware struct {
 	Name string 
 }
+
+type Middleware2 struct {
+	Name string
+}
+
