@@ -4,6 +4,7 @@ import (
 	"hexagonal-template/internal/core/domain"
 	"hexagonal-template/internal/core/port"
 	"hexagonal-template/pkg/validators"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -33,7 +34,7 @@ func NewHttp(svc port.Service, validators validators.Validators) *HttpHandler {
 
 func (hdl *HttpHandler) SomeHandler(c *fiber.Ctx) error {
 	var request domain.BusinessLogicRequest
-
+	time.Sleep(time.Millisecond * 10)
 	/*
 		|--------------------------------------------------------------------------
 		| Request Body Serialization

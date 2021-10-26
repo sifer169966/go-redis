@@ -42,7 +42,7 @@ func ServeRest(cfgPath, env string) error {
 	hdl := handler.NewHttp(svc, vld)
 
 	// example
-	app.Get("/", hdl.SomeHandler)
+	app.Get("/", nil, hdl.SomeHandler)
 
 	// gracefully shuts down  ...
 	c := make(chan os.Signal, 1)
