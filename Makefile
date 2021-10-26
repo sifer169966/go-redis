@@ -1,10 +1,10 @@
 inject-env:
 # use .env file if it exist
 ifneq ("$(wildcard .env)","")
-	$(eval -include .env)
+	$(eval -include .env) \
 	$(eval export $(shell sed 's/=.*//' .env))
 else
- 	$(eval include -include .env.example)
+ 	$(eval -include .env.example) \
 	$(eval export $(shell sed 's/=.*//' .env.example))
 endif
 
